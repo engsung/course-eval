@@ -1,25 +1,27 @@
 from bs4 import BeautifulSoup
 import requests
-from decouple import config
+import os
+from dotenv import load_dotenv
 
-# Start the session
-session = requests.Session()
 
-# Create the payload
-payload = {'txtUsername': 'sdf',
-          'txtPassword': 'sfdsd'
-         }
+def main():
+    # Create the payload
+    load_dotenv()
+    payload = {'txtUsername': os.getenv('USERNAME'),
+               'txtPassword': os.getenv('PASSWORD'),
+               'command': 'authenticate'
+               }
 
-# Post the payload to the site to log in
-s = session.post("https://www.chess.com/login_check", data=payload)
+    with requests.Session() as s:
+        # Post the payload to the site to log in
+        p = s.post("https://sqct.uwo.ca/results/login.cfm", data=payload)
+        # Navigate to the next page and scrape the data
 
-# Navigate to the next page and scrape the data
-s = session.get('https://www.chess.com/today')
-
-soup = BeautifulSoup(s.text, 'html.parser')
-soup.find('img')['src']
+        # An authorised request.
+        r = s.get('https://sqct.uwo.ca/results/search.cfm')
+        soup = BeautifulSoup(r.content, 'html.parser')
+        print(soup.title.text)
 
 
 if __name__ == '__main__':
-    pass
-
+    main()
