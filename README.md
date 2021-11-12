@@ -1,6 +1,6 @@
 # Course-Eval
-This program scraps data from [Student Questionnaires On Courses And Teaching](https://sqct.uwo.ca/results/) website 
-from Western University and store the results in a csv file (prof_mean.csv).
+This program scraps data from the [Student Questionnaires On Courses And Teaching](https://sqct.uwo.ca/results/) website 
+for Western University and stores the results in a csv file (prof_mean.csv).
 
 ### Stored Data
 - Instructor
@@ -29,3 +29,4 @@ Create a .env file
 USERNAME=YOURUWOID
 PASSWORD=YOURUWOPASS
 ``` 
+python3 main.py
