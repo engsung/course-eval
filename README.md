@@ -6,7 +6,8 @@ from Western University and store the results in a csv file (prof_mean.csv).
 - Instructor
 - Faculty
 - Mean Displays Enthusiasm
-- Mean Well Organized,Mean Presents Concepts Clearly
+- Mean Well Organized
+- Mean Presents Concepts Clearly
 - Mean Encourages Participation
 - Mean Responds To Questions Clearly
 - Mean Encourages Reflection
