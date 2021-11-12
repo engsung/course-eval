@@ -60,7 +60,6 @@ def main():
                         inside_table2_td = tr.findAll("td")
                         f.write(inside_table2_td[9].text.strip()+',')
                 f.write(tds[3].text+','+tds[4].text+','+tds[5].text+'\n')
-                # f.write(tds[3].text + ',' + tds[4].text + ',' + tds[5].text + '\n')
 
         print("Finished extracting data")
 
